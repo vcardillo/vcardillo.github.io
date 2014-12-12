@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Git | Vincent Cardillo]]></title>
   <link href="http://vcardillo.github.io/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://vcardillo.github.io/"/>
-  <updated>2014-12-11T22:37:54-08:00</updated>
+  <updated>2014-12-11T22:47:50-08:00</updated>
   <id>http://vcardillo.github.io/</id>
   <author>
     <name><![CDATA[Vincent Cardillo]]></name>
@@ -34,7 +34,7 @@ function parse_git_branch {
 
 <p>And now our command prompt looks like this:</p>
 
-<p><code>
+<p><code>bash
 you@host:~/Project/folder (master)$
 </code></p>
 
