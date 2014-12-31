@@ -15,13 +15,13 @@ function parse_git_branch {
 
 # This will display the current folder's full path.
 # If you want only the folder name, replace \w with \W
-export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\[\033[31m\]\$(parse_git_branch)\[\033[0m\]\$ "
+export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\[\033[36m\]\$(parse_git_branch)\[\033[0m\]\$ "
   
 ```
 
 And now our command prompt looks like this:
 
-```
+``` bash
 you@host:~/Project/folder (master)$ 
 ```
 
