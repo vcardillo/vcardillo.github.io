@@ -4,7 +4,7 @@
   <title><![CDATA[Vincent Cardillo]]></title>
   <link href="http://vcardillo.github.io/atom.xml" rel="self"/>
   <link href="http://vcardillo.github.io/"/>
-  <updated>2014-12-11T22:57:06-08:00</updated>
+  <updated>2014-12-31T15:32:36-08:00</updated>
   <id>http://vcardillo.github.io/</id>
   <author>
     <name><![CDATA[Vincent Cardillo]]></name>
@@ -16,9 +16,9 @@
   <entry>
     <title type="html"><![CDATA[Putting the Git Branch Name on the Command Prompt]]></title>
     <link href="http://vcardillo.github.io/blog/2014/12/11/putting-the-git-branch-name-on-the-command-prompt/"/>
-    <updated>2014-12-11T20:32:38-08:00</updated>
+    <updated>2014-12-11T20:32:00-08:00</updated>
     <id>http://vcardillo.github.io/blog/2014/12/11/putting-the-git-branch-name-on-the-command-prompt</id>
-    <content type="html"><![CDATA[<p>Sometimes it&rsquo;s handy to always see which branch of the repository we&rsquo;re working in. We can display this as part of the terminal command prompt by adding a few things to our local <code>.bashrc</code> file.</p>
+    <content type="html"><![CDATA[<p>Sometimes it’s handy to always see which branch of the repository we’re working in. We can display this as part of the terminal command prompt by adding a few things to our local <code>.bashrc</code> file.</p>
 
 <figure class='code'><figcaption><span>~/.bashrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -27,19 +27,21 @@
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
+<span class='line-number'>8</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="k">function </span>parse_git_branch <span class="o">{</span>
 </span><span class='line'>  git branch 2&gt; /dev/null | sed -e <span class="s1">&#39;/^[^*]/d&#39;</span> -e <span class="s1">&#39;s/* \(.*\)/ (\1)/&#39;</span>
 </span><span class='line'><span class="o">}</span>
 </span><span class='line'>
 </span><span class='line'><span class="c"># This will display the current folder&#39;s full path.</span>
 </span><span class='line'><span class="c"># If you want only the folder name, replace \w with \W</span>
-</span><span class='line'><span class="nb">export </span><span class="nv">PS1</span><span class="o">=</span><span class="err">&quot;</span><span class="se">\[\e</span><span class="o">]</span>0;<span class="se">\u</span>@<span class="se">\h</span>: <span class="se">\w\a\]</span><span class="k">${</span><span class="nv">debian_chroot</span><span class="p">:+(</span><span class="nv">$debian_chroot</span><span class="p">)</span><span class="k">}</span><span class="se">\u</span>@<span class="se">\h</span>:<span class="se">\w\[\0</span>33<span class="o">[</span>31m<span class="se">\]\$</span><span class="o">(</span>parse_git_branch<span class="o">)</span><span class="se">\[\0</span>33<span class="o">[</span>0m<span class="se">\]\$</span>
+</span><span class='line'><span class="nb">export </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\[\033[31m\]\$(parse_git_branch)\[\033[0m\]\$ &quot;</span>
+</span><span class='line'>
 </span></code></pre></td></tr></table></div></figure>
 
 
 <p>And now our command prompt looks like this:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>~/.bashrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>you@host:~/Project/folder <span class="o">(</span>master<span class="o">)</span><span class="nv">$ </span>
 </span></code></pre></td></tr></table></div></figure>
 
