@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Bash | Vincent Cardillo]]></title>
   <link href="http://vcardillo.github.io/blog/categories/bash/atom.xml" rel="self"/>
   <link href="http://vcardillo.github.io/"/>
-  <updated>2014-12-31T15:32:36-08:00</updated>
+  <updated>2014-12-31T15:57:03-08:00</updated>
   <id>http://vcardillo.github.io/</id>
   <author>
     <name><![CDATA[Vincent Cardillo]]></name>
@@ -20,7 +20,7 @@
     <id>http://vcardillo.github.io/blog/2014/12/11/putting-the-git-branch-name-on-the-command-prompt</id>
     <content type="html"><![CDATA[<p>Sometimes it’s handy to always see which branch of the repository we’re working in. We can display this as part of the terminal command prompt by adding a few things to our local <code>.bashrc</code> file.</p>
 
-<p>``` bash ~/.bashrc
+<p>&#8220;` bash ~/.bashrc
 function parse_git_branch {
   git branch 2> /dev/null | sed -e &lsquo;/^[^<em>]/d&rsquo; -e &rsquo;s/</em> (.*)/ (\1)/&lsquo;
 }</p>
@@ -29,15 +29,14 @@ function parse_git_branch {
 
 <h1>If you want only the folder name, replace \w with \W</h1>
 
-<p>export PS1=&ldquo;[\e]0;\u@\h: \w\a]${debian_chroot:+($debian_chroot)}\u@\h:\w[\033[31m]\$(parse_git_branch)[\033[0m]\$ &rdquo;</p>
+<p>export PS1=&ldquo;[\e]0;\u@\h: \w\a]${debian_chroot:+($debian_chroot)}\u@\h:\w[\033[36m]\$(parse_git_branch)[\033[0m]\$ &rdquo;</p>
 
-<p>```</p>
+<pre><code>
+And now our command prompt looks like this:
+</code></pre>
 
-<p>And now our command prompt looks like this:</p>
-
-<p><code>
-you@host:~/Project/folder (master)$
-</code></p>
+<p>you@host:~/Project/folder (master)$
+&#8220;`</p>
 
 <p>The branch name will always be displayed in parenthesis for us.</p>
 ]]></content>
