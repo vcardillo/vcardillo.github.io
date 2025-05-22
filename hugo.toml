@@ -1,0 +1,8 @@
+baseURL = 'https://vcardillo.github.io/'
+languageCode = 'en-us'
+title = 'Vincent Cardillo'
+theme = 'ananke'
+
+[markup]
+  [markup.highlight]
+    lineNos = true
