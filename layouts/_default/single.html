@@ -25,6 +25,13 @@
       {{- partial "translation_list.html" . -}}
       {{- partial "edit_post.html" . -}}
       {{- partial "post_canonical.html" . -}}
+
+      {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
+      &nbsp; | &nbsp;
+      {{- $allTags := $.GetTerms $tags }}
+      {{- range $i, $tag := $allTags }}
+        <a href="{{ $tag.Permalink }}" style="text-transform: lowercase;">{{ $tag.LinkTitle }}</a>{{ if ne (add $i 1) (len $allTags) }},&nbsp; {{ end }}
+      {{- end }}
     </div>
     {{- end }}
   </header>
@@ -43,12 +50,6 @@
   {{- end }}
 
   <footer class="post-footer">
-    {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
-    <ul class="post-tags">
-      {{- range ($.GetTerms $tags) }}
-      <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
-      {{- end }}
-    </ul>
     {{- if (.Param "ShowPostNavLinks") }}
     {{- partial "post_nav_links.html" . }}
     {{- end }}

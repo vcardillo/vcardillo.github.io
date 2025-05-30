@@ -41,6 +41,7 @@ googleAnalytics = "UA-123-45"
   hideSummary = false
   showtoc = false
   tocopen = false
+  #customCSS = ["css/custom.css"]
 
   [params.assets]
     favicon = "<link / abs url>"

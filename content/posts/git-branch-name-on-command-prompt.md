@@ -2,7 +2,7 @@
 date = '2025-05-21T17:03:20-07:00'
 draft = false
 title = 'Putting the Git Branch Name on the Command Prompt'
-tags = ["code"]
+tags = ["code", "fun"]
 +++
 
 I originally posted this in Octopress on Dec 11th 2014.
