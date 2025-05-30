@@ -1,2 +1,8 @@
 .DS_Store
-public/
+Thumbs.db
+
+# Hugo build output
+/public/
+/resources/_gen/
+/hugo_stats.json
+
