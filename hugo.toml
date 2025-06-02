@@ -42,6 +42,7 @@ googleAnalytics = "UA-123-45"
   showtoc = false
   tocopen = false
   #customCSS = ["css/custom.css"]
+  mainSections = ["posts"]
 
   [params.assets]
     favicon = "<link / abs url>"
